@@ -1,0 +1,63 @@
+{
+  "name": "cute_robot",
+  "version": "1.0.0",
+  "description": "cute robot challenge",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc --outDir build ",
+    "test": "jest src/ --coverage --silent",
+    "lint": "tslint -p tsconfig.json -t codeFrame 'src/*.ts'",
+    "run": "node ./build/index.js"
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "collectCoverageFrom": [
+      "src/*.{js,jsx,ts,tsx}",
+      "!src/*.d.ts"
+    ],
+    "testRegex": "(/src/).*(test|spec)\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node",
+      "ts",
+      "tsx"
+    ],
+    "testEnvironment": "node",
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true
+        },
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "preset": "ts-jest",
+    "testMatch": null
+  },
+  "keywords": [
+    "cute",
+    "robot"
+  ],
+  "author": "Mason Jam",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.14",
+    "@types/node": "^12.0.8",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.17.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.5.2"
+  }
+}
