@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc --outDir build ",
-    "test": "jest src/ --coverage --silent",
+    "test": "jest src/ --coverage",
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/*.ts'",
     "run": "node ./build/index.js"
   },

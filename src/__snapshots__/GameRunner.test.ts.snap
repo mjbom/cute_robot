@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameRunner Class tests move method 1`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 0,
+  "positionY": 1,
+}
+`;
+
+exports[`GameRunner Class tests move method 2`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 0,
+  "positionY": 2,
+}
+`;
+
+exports[`GameRunner Class tests play method 1`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 0,
+  "positionY": 1,
+}
+`;

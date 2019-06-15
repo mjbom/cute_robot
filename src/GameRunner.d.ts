@@ -1,18 +1,18 @@
 export interface IGameDetails {
   positionX: number,
   positionY: number,
-  faceDirection: IFaceDirection
+  faceDirection: string
 }
 
-export enum IAction {
-  PLACE,
-  MOVE,
-  REPORT
-}
+// export const enum IAction {
+//   'PLACE' = 1,
+//   'MOVE' = 2,
+//   'REPORT' = 3
+// }
 
-export enum IFaceDirection {
-  N,
-  E,
-  S,
-  W
-}
+// export const enum IFaceDirection {
+//   'N' = 1,
+//   'E' = 2,
+//   'S' = 3,
+//   'W' = 4
+// }

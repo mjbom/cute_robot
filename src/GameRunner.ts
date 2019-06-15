@@ -1,25 +1,25 @@
-import { IGameDetails, IFaceDirection, IAction } from './GameRunner.d'
+import { IGameDetails } from './GameRunner.d'
 
 export default class GameRunner {
   static PLAYGROUNDSIZE: number = 5
   constructor() {
     // this.playGroundSize = playGroundSize ? playGroundSize : 5
   }
-  static play(gameDetails: IGameDetails, action: IAction): IGameDetails {
+  static play(gameDetails: IGameDetails, action: string): IGameDetails {
     switch (action) {
-      case IAction.PLACE:
+      case 'PLACE':
         if (gameDetails.positionX < this.PLAYGROUNDSIZE
           && gameDetails.positionY < this.PLAYGROUNDSIZE
           && gameDetails.positionX > 0
           && gameDetails.positionY > 0
-          && gameDetails.faceDirection in IFaceDirection) {
+          && ['N', 'E', 'S', 'W'].includes(gameDetails.faceDirection)
+        ) {
           return gameDetails
         }
         break
-      case IAction.MOVE:
+      case 'MOVE':
         return this.move(gameDetails)
-      case IAction.REPORT:
-        console.log(gameDetails)
+      case 'REPORT':
         return gameDetails
       default:
         throw 'Uknown action!'
@@ -29,13 +29,13 @@ export default class GameRunner {
 
   static isRobotMovable(gameDetails: IGameDetails): boolean {
     switch (gameDetails.faceDirection) {
-      case IFaceDirection.N:
+      case 'N':
         return gameDetails.positionY < this.PLAYGROUNDSIZE
-      case IFaceDirection.E:
+      case 'E':
         return gameDetails.positionX < this.PLAYGROUNDSIZE
-      case IFaceDirection.S:
+      case 'S':
         return gameDetails.positionY > 0
-      case IFaceDirection.W:
+      case 'W':
         return gameDetails.positionX > 0
       default:
         throw 'Unknown direction!'
@@ -47,16 +47,16 @@ export default class GameRunner {
       throw 'Not movable!'
     }
     switch (gameDetails.faceDirection) {
-      case IFaceDirection.N:
+      case 'N':
         gameDetails.positionY = gameDetails.positionY + 1
         return gameDetails
-      case IFaceDirection.E:
+      case 'E':
         gameDetails.positionX = gameDetails.positionX + 1
         return gameDetails
-      case IFaceDirection.S:
+      case 'S':
         gameDetails.positionX = gameDetails.positionX - 1
         return gameDetails
-      case IFaceDirection.W:
+      case 'W':
         gameDetails.positionX = gameDetails.positionX - 1
         return gameDetails
       default:
