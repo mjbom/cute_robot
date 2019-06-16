@@ -10,16 +10,17 @@ export default class GameRunner {
       case 'PLACE':
         if (gameDetails.positionX < this.PLAYGROUNDSIZE
           && gameDetails.positionY < this.PLAYGROUNDSIZE
-          && gameDetails.positionX > 0
-          && gameDetails.positionY > 0
+          && gameDetails.positionX >= 0
+          && gameDetails.positionY >= 0
           && ['N', 'E', 'S', 'W'].includes(gameDetails.faceDirection)
         ) {
           return gameDetails
         }
-        break
+        throw 'Bad PLACE settings'
       case 'MOVE':
         return this.move(gameDetails)
       case 'REPORT':
+        console.log(gameDetails)
         return gameDetails
       default:
         throw 'Uknown action!'
@@ -30,9 +31,9 @@ export default class GameRunner {
   static isRobotMovable(gameDetails: IGameDetails): boolean {
     switch (gameDetails.faceDirection) {
       case 'N':
-        return gameDetails.positionY < this.PLAYGROUNDSIZE
+        return gameDetails.positionY < this.PLAYGROUNDSIZE - 1
       case 'E':
-        return gameDetails.positionX < this.PLAYGROUNDSIZE
+        return gameDetails.positionX < this.PLAYGROUNDSIZE - 1
       case 'S':
         return gameDetails.positionY > 0
       case 'W':
@@ -61,6 +62,44 @@ export default class GameRunner {
         return gameDetails
       default:
         throw 'Unable to move due to unknown error!'
+    }
+  }
+
+  static turnRight(gameDetails: IGameDetails): IGameDetails {
+    switch (gameDetails.faceDirection) {
+      case 'N':
+        gameDetails.faceDirection = 'E'
+        return gameDetails
+      case 'E':
+        gameDetails.faceDirection = 'S'
+        return gameDetails
+      case 'S':
+        gameDetails.faceDirection = 'W'
+        return gameDetails
+      case 'W':
+        gameDetails.faceDirection = 'N'
+        return gameDetails
+      default:
+        throw 'Unable to rotate due to unknown error!'
+    }
+  }
+
+  static turnLeft(gameDetails: IGameDetails): IGameDetails {
+    switch (gameDetails.faceDirection) {
+      case 'N':
+        gameDetails.faceDirection = 'W'
+        return gameDetails
+      case 'E':
+        gameDetails.faceDirection = 'N'
+        return gameDetails
+      case 'S':
+        gameDetails.faceDirection = 'E'
+        return gameDetails
+      case 'W':
+        gameDetails.faceDirection = 'S'
+        return gameDetails
+      default:
+        throw 'Unable to rotate due to unknown error!'
     }
   }
 }

@@ -16,10 +16,130 @@ Object {
 }
 `;
 
-exports[`GameRunner Class tests play method 1`] = `
+exports[`GameRunner Class tests play method with MOVE action 1`] = `
 Object {
   "faceDirection": "N",
   "positionX": 0,
   "positionY": 1,
+}
+`;
+
+exports[`GameRunner Class tests play method with MOVE action 2`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 0,
+  "positionY": 2,
+}
+`;
+
+exports[`GameRunner Class tests play method with MOVE action 3`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 0,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests play method with MOVE action 4`] = `
+Object {
+  "faceDirection": "E",
+  "positionX": 1,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests play method with PLACE action 1`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 0,
+  "positionY": 0,
+}
+`;
+
+exports[`GameRunner Class tests play method with PLACE action 2`] = `
+Object {
+  "faceDirection": "W",
+  "positionX": 4,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests play method with REPORT action 1`] = `
+Object {
+  "faceDirection": "S",
+  "positionX": 3,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests play method with REPORT action 2`] = `
+Object {
+  "faceDirection": "E",
+  "positionX": 0,
+  "positionY": 0,
+}
+`;
+
+exports[`GameRunner Class tests turnLeft method 1`] = `
+Object {
+  "faceDirection": "W",
+  "positionX": 3,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests turnLeft method 2`] = `
+Object {
+  "faceDirection": "S",
+  "positionX": 3,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests turnLeft method 3`] = `
+Object {
+  "faceDirection": "E",
+  "positionX": 3,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests turnLeft method 4`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 3,
+  "positionY": 3,
+}
+`;
+
+exports[`GameRunner Class tests turnRight method 1`] = `
+Object {
+  "faceDirection": "E",
+  "positionX": 0,
+  "positionY": 0,
+}
+`;
+
+exports[`GameRunner Class tests turnRight method 2`] = `
+Object {
+  "faceDirection": "S",
+  "positionX": 0,
+  "positionY": 0,
+}
+`;
+
+exports[`GameRunner Class tests turnRight method 3`] = `
+Object {
+  "faceDirection": "W",
+  "positionX": 0,
+  "positionY": 0,
+}
+`;
+
+exports[`GameRunner Class tests turnRight method 4`] = `
+Object {
+  "faceDirection": "N",
+  "positionX": 0,
+  "positionY": 0,
 }
 `;
