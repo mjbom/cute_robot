@@ -7,4 +7,4 @@ Run the following sequence of commands in the root folder of the project to run 
 
 If you want to change the program and run the unit test. You can do it through the following command:
 
-`npm run test'
+`npm run test`
