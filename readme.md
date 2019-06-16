@@ -3,7 +3,7 @@ Run the following sequence of commands in the root folder of the project to run 
 
 `npm i`  
 `npm run build`  
-`npm run run'  
+`npm run run`  
 
 If you want to change the program and run the unit test. You can do it through the following command:
 
